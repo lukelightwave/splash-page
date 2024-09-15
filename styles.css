@@ -126,10 +126,11 @@ body, html {
     font-weight: bold;
     z-index: 100;
     padding: 10px;
-    background-color: transparent !important; /* Ensure no background */
-    border: none; /* Make sure there's no border */
-    box-shadow: none; /* Remove any potential box shadows */
+    background-color: transparent; /* Make sure the background is fully transparent */
+    border: none; /* Ensure there's no border */
+    box-shadow: none; /* Remove any shadows */
 }
+
 
 /* Styling for the links (address and email) */
 .contact-info a {
