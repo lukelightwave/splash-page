@@ -64,3 +64,119 @@ body, html {
 .slideshow img.active {
     opacity: 1;
 }
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 50px;
+}
+
+.navbar li {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+/* Slideshow container for cycling background images */
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+/* Services buttons on the left */
+.services-buttons {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.services-btn {
+    background-color: transparent;
+    border: none;
+    color: #FFD700;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.services-btn:hover {
+    color: #fff;
+}
+
+/* Hover text that appears in the center */
+.services-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 10;
+    visibility: hidden; /* Hidden by default */
+}
+
+.services-hover-text p {
+    margin: 0;
+}
+
+/* Active state for hover text */
+.services-btn:hover ~ .services-hover-text {
+    visibility: visible;
+}
+
