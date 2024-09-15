@@ -43,13 +43,16 @@ body, html {
     color: #fff; /* Changes to white on hover */
 }
 
-/* Slideshow container */
+/* Slideshow container (background images cycling) */
 .slideshow {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100vh;
+    z-index: 0;
     overflow: hidden;
-    z-index: 0; /* Slideshow stays behind the navbar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .slideshow img {
@@ -64,6 +67,7 @@ body, html {
 .slideshow img.active {
     opacity: 1;
 }
+
 /* Basic reset */
 * {
     margin: 0;
