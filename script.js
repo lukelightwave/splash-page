@@ -75,3 +75,34 @@ servicesButtons.forEach(button => {
         hoverText.textContent = ''; // Clear text on mouse out
     });
 });
+// Image slideshow for Services Page (background image cycling)
+const servicesImages = document.querySelectorAll('.slideshow img');
+let servicesCurrentIndex = 0;
+
+function cycleServicesImages() {
+    if (servicesImages.length > 0) {
+        servicesImages[servicesCurrentIndex].classList.remove('active');
+        servicesCurrentIndex = (servicesCurrentIndex + 1) % servicesImages.length;
+        servicesImages[servicesCurrentIndex].classList.add('active');
+    }
+}
+
+// Cycle every 5 seconds for the Services page
+setInterval(cycleServicesImages, 5000);
+
+// Hover text functionality for Services buttons
+const servicesButtons = document.querySelectorAll('.services-btn');
+const hoverText = document.getElementById('hover-text');
+
+servicesButtons.forEach(button => {
+    // Mouseover event to show hover text
+    button.addEventListener('mouseover', function() {
+        hoverText.textContent = this.dataset.description; // Show button description in the center
+    });
+
+    // Mouseout event to clear hover text when mouse leaves
+    button.addEventListener('mouseout', function() {
+        hoverText.textContent = ''; // Clear text on mouse out
+    });
+});
+
