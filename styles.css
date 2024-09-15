@@ -24,7 +24,7 @@ body, html {
 .navbar ul {
     list-style-type: none;
     display: inline-flex;
-    gap: 1000px; /* Spacing between buttons */
+    gap: 100px; /* Spacing between buttons */
 }
 
 .navbar li {
