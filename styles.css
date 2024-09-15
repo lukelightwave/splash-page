@@ -17,6 +17,7 @@ body, html {
     top: 20px;
     width: 100%;
     text-align: center;
+    z-index: 100; /* Ensure buttons appear above the slideshow */
 }
 
 .navbar ul {
@@ -47,6 +48,7 @@ body, html {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: 0; /* Slideshow stays behind the navbar */
 }
 
 .slideshow img {
