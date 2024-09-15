@@ -114,3 +114,20 @@ body, html {
     visibility: visible;
 }
 
+/* Contact information at the bottom center */
+.contact-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #FFD700; /* Yellow */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin: 5px 0; /* Space between lines */
+}
+
+
