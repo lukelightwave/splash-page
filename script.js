@@ -57,21 +57,29 @@ function cycleServicesImages() {
     }
 }
 
-// Cycle every 5 seconds for the Services page
+// Cycle every 5 seconds for Services page
 setInterval(cycleServicesImages, 5000);
 
-// Hover text functionality
+// Hover text functionality for Services buttons
 const servicesButtons = document.querySelectorAll('.services-btn');
 const hoverText = document.getElementById('hover-text');
+const slideshowContainer = document.querySelector('.slideshow'); // Target the slideshow container
 
 servicesButtons.forEach(button => {
     button.addEventListener('mouseover', function() {
         hoverText.textContent = this.dataset.text; // Display button-specific text in the center
+        slideshowContainer.style.backgroundImage = `url(${this.dataset.bg})`; // Change the background image
+        slideshowContainer.style.backgroundSize = 'cover';
+        slideshowContainer.style.backgroundPosition = 'center';
+        slideshowContainer.style.transition = 'background-image 0.5s ease-in-out'; // Smooth transition
         document.querySelector('.services-hover-text').style.visibility = 'visible';
     });
 
     button.addEventListener('mouseout', function() {
+        // Restore original cycling background behavior
+        slideshowContainer.style.backgroundImage = ''; // Remove background image on mouseout
         document.querySelector('.services-hover-text').style.visibility = 'hidden';
     });
 });
+
 
