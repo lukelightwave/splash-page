@@ -133,15 +133,20 @@ body, html {
     margin: 5px 0;
 }
 
-/* Make links (address and email) inherit yellow and turn white on hover */
+/* Styling for the links (address and email) */
 .contact-info a {
-    color: #FFD700; /* Yellow text for links */
+    color: #FFD700; /* Yellow color (same as the text) */
     text-decoration: none; /* No underline */
-    transition: color 0.3s ease; /* Smooth transition */
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 .contact-info a:hover {
     color: #ffffff; /* Turns white on hover */
 }
+
+.contact-info a:visited {
+    color: #FFD700; /* Maintain yellow even after clicking (no purple visited color) */
+}
+
 
 
