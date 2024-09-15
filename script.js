@@ -45,7 +45,7 @@ function cycleContactImages() {
 // Cycle every 5 seconds for Contact Page
 setInterval(cycleContactImages, 5000);
 
-// Image slideshow for Services Page
+// Image slideshow for Services Page (background image cycling)
 const servicesImages = document.querySelectorAll('.slideshow img');
 let servicesCurrentIndex = 0;
 
@@ -63,42 +63,15 @@ setInterval(cycleServicesImages, 5000);
 // Hover text functionality for Services buttons
 const servicesButtons = document.querySelectorAll('.services-btn');
 const hoverText = document.getElementById('hover-text');
-const slideshowContainer = document.querySelector('.slideshow');
-
-// Function to clear the "active" state on all buttons
-function clearActiveState() {
-    servicesButtons.forEach(button => {
-        button.classList.remove('active');
-    });
-}
 
 servicesButtons.forEach(button => {
-    // Mouseover event to show hover text and background
+    // Mouseover event to show hover text
     button.addEventListener('mouseover', function() {
-        if (!this.classList.contains('active')) { // Only show hover effect if not active
-            hoverText.textContent = this.dataset.description; // Show button description
-            slideshowContainer.style.backgroundImage = `url(${this.dataset.bg})`; // Change the background image
-            slideshowContainer.style.backgroundSize = 'cover';
-            slideshowContainer.style.backgroundPosition = 'center';
-            slideshowContainer.style.transition = 'background-image 0.5s ease-in-out'; // Smooth transition
-        }
+        hoverText.textContent = this.dataset.description; // Show button description in the center
     });
 
-    // Click event to make button stay white and display persistent text and background
-    button.addEventListener('click', function() {
-        clearActiveState(); // Clear previous active buttons
-        this.classList.add('active'); // Make clicked button active
-        hoverText.textContent = this.dataset.description; // Show persistent text for this button
-        slideshowContainer.style.backgroundImage = `url(${this.dataset.bg})`; // Set background to match button
-    });
-
-    // Mouseout event to clear hover effect but not for active buttons
+    // Mouseout event to clear hover text when mouse leaves
     button.addEventListener('mouseout', function() {
-        if (!this.classList.contains('active')) { // Only reset hover effect if not active
-            slideshowContainer.style.backgroundImage = ''; // Clear background image
-        }
+        hoverText.textContent = ''; // Clear text on mouse out
     });
 });
-
-
-
