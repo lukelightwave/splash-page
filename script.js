@@ -57,29 +57,48 @@ function cycleServicesImages() {
     }
 }
 
-// Cycle every 5 seconds for Services page
+// Cycle every 5 seconds for the Services page
 setInterval(cycleServicesImages, 5000);
 
 // Hover text functionality for Services buttons
 const servicesButtons = document.querySelectorAll('.services-btn');
 const hoverText = document.getElementById('hover-text');
-const slideshowContainer = document.querySelector('.slideshow'); // Target the slideshow container
+const slideshowContainer = document.querySelector('.slideshow');
+
+// Function to clear the "active" state on all buttons
+function clearActiveState() {
+    servicesButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+}
 
 servicesButtons.forEach(button => {
+    // Mouseover event to show hover text and background
     button.addEventListener('mouseover', function() {
-        hoverText.textContent = this.dataset.text; // Display button-specific text in the center
-        slideshowContainer.style.backgroundImage = `url(${this.dataset.bg})`; // Change the background image
-        slideshowContainer.style.backgroundSize = 'cover';
-        slideshowContainer.style.backgroundPosition = 'center';
-        slideshowContainer.style.transition = 'background-image 0.5s ease-in-out'; // Smooth transition
-        document.querySelector('.services-hover-text').style.visibility = 'visible';
+        if (!this.classList.contains('active')) { // Only show hover effect if not active
+            hoverText.textContent = this.dataset.description; // Show button description
+            slideshowContainer.style.backgroundImage = `url(${this.dataset.bg})`; // Change the background image
+            slideshowContainer.style.backgroundSize = 'cover';
+            slideshowContainer.style.backgroundPosition = 'center';
+            slideshowContainer.style.transition = 'background-image 0.5s ease-in-out'; // Smooth transition
+        }
     });
 
+    // Click event to make button stay white and display persistent text and background
+    button.addEventListener('click', function() {
+        clearActiveState(); // Clear previous active buttons
+        this.classList.add('active'); // Make clicked button active
+        hoverText.textContent = this.dataset.description; // Show persistent text for this button
+        slideshowContainer.style.backgroundImage = `url(${this.dataset.bg})`; // Set background to match button
+    });
+
+    // Mouseout event to clear hover effect but not for active buttons
     button.addEventListener('mouseout', function() {
-        // Restore original cycling background behavior
-        slideshowContainer.style.backgroundImage = ''; // Remove background image on mouseout
-        document.querySelector('.services-hover-text').style.visibility = 'hidden';
+        if (!this.classList.contains('active')) { // Only reset hover effect if not active
+            slideshowContainer.style.backgroundImage = ''; // Clear background image
+        }
     });
 });
+
 
 
