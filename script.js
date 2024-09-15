@@ -44,3 +44,34 @@ function cycleContactImages() {
 
 // Cycle every 5 seconds for Contact Page
 setInterval(cycleContactImages, 5000);
+
+// Image slideshow for Services Page
+const servicesImages = document.querySelectorAll('.slideshow img');
+let servicesCurrentIndex = 0;
+
+function cycleServicesImages() {
+    if (servicesImages.length > 0) {
+        servicesImages[servicesCurrentIndex].classList.remove('active');
+        servicesCurrentIndex = (servicesCurrentIndex + 1) % servicesImages.length;
+        servicesImages[servicesCurrentIndex].classList.add('active');
+    }
+}
+
+// Cycle every 5 seconds for the Services page
+setInterval(cycleServicesImages, 5000);
+
+// Hover text functionality
+const servicesButtons = document.querySelectorAll('.services-btn');
+const hoverText = document.getElementById('hover-text');
+
+servicesButtons.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        hoverText.textContent = this.dataset.text; // Display button-specific text in the center
+        document.querySelector('.services-hover-text').style.visibility = 'visible';
+    });
+
+    button.addEventListener('mouseout', function() {
+        document.querySelector('.services-hover-text').style.visibility = 'hidden';
+    });
+});
+
