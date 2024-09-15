@@ -88,7 +88,7 @@ body, html {
 }
 
 .services-btn:hover {
-    color: #fff;
+    color: #fff; /* Turns button text white on hover */
 }
 
 /* Hover text that appears in the center */
@@ -102,14 +102,15 @@ body, html {
     font-size: 36px;
     font-weight: bold;
     z-index: 10;
-    visibility: hidden; /* Hidden by default */
+    visibility: hidden; /* Initially hidden */
 }
 
 .services-hover-text p {
     margin: 0;
 }
 
-/* Show hover text when hovering over buttons */
-.services-btn:hover ~ .services-hover-text {
+/* CSS class to show hover text */
+.show-hover-text {
     visibility: visible;
 }
+
