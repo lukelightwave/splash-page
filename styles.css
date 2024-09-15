@@ -134,20 +134,18 @@ body, html {
 }
 
 /* Styling for the links (address and email) */
-.contact-info a:link, 
-.contact-info a:visited, 
-.contact-info a:hover, 
-.contact-info a:focus, 
-.contact-info a:active {
-    color: #FFD700; /* Yellow color for all states (link, visited, active, etc.) */
-    text-decoration: none; /* Remove underline in all states */
+.contact-info a {
+    color: #FFD700 !important; /* Ensure yellow links by default */
+    text-decoration: none !important; /* Remove underline */
     transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 .contact-info a:hover {
-    color: #ffffff; /* Turns white on hover */
+    color: #ffffff !important; /* Turns white on hover */
 }
 
-
+.contact-info a:visited {
+    color: #FFD700 !important; /* Maintain yellow even after clicking (no purple visited color) */
+}
 
 
