@@ -5,47 +5,72 @@
     box-sizing: border-box;
 }
 
-/* Ensure the body and html take up the full viewport height and width */
 body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* Slideshow container should always take up 100% of viewport */
-.slideshow {
+/* Splash page container */
+.splash-page {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
-/* Default image styles (for desktop) */
-.slideshow img {
+/* Navbar styles */
+.navbar {
     position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.navbar li {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    color: #FFD700; /* Gold color to match your design */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+/* Background image and centered text */
+.background {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the images cover the area */
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    position: relative;
+    background-size: cover;
 }
 
-.slideshow img.active {
-    opacity: 1;
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Make it more responsive for smaller screens */
-@media (max-width: 768px) {
-    .slideshow img {
-        object-fit: contain; /* For smaller devices, keep the whole image in view */
-        height: auto; /* Allow the height to be adjusted based on the aspect ratio */
-    }
-}
-
-/* Mobile-specific styles (for screens smaller than 480px) */
-@media (max-width: 480px) {
-    .slideshow img {
-        width: 100%;
-        height: auto;
-        object-fit: contain; /* Ensure the images fit the smaller screen without being cut off */
-    }
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #DA70D6; /* Light purple/pink text color */
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
 }
