@@ -117,18 +117,16 @@ body, html {
 /* Contact information at the bottom center */
 .contact-info {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
+    bottom: 20px; /* Distance from the bottom of the page */
+    left: 50%; /* Center horizontally */
     transform: translateX(-50%);
     text-align: center;
-    color: #FFD700; /* Same yellow as the headers */
+    color: #FFD700; /* Yellow text color */
     font-size: 18px;
     font-weight: bold;
-    z-index: 100; /* Ensure it's above the background images */
-}
-
-.contact-info p {
-    margin: 5px 0; /* Space between lines */
+    z-index: 100; /* Ensures it's on top of the slideshow images */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: adds a semi-transparent background to improve visibility */
+    padding: 10px;
 }
 
 /* Slideshow container */
@@ -136,9 +134,8 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100vh;
-    z-index: 0;
+    z-index: 0; /* This ensures the images are behind the contact info */
     overflow: hidden;
-    background-color: black; /* Background color during transition */
 }
 
 .slideshow img {
@@ -147,12 +144,10 @@ body, html {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .slideshow img.active {
     opacity: 1;
-    background-color: black; /* Fade to black between images */
 }
-
 
