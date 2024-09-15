@@ -17,13 +17,14 @@ body, html {
     top: 20px;
     width: 100%;
     text-align: center;
-    z-index: 100; /* Ensure buttons appear above the slideshow */
+    z-index: 100; /* Make sure navbar is above the slideshow */
+    background-color: transparent; /* Ensure no background covers the navbar */
 }
 
 .navbar ul {
     list-style-type: none;
     display: inline-flex;
-    gap: 50px; /* Increased gap between buttons */
+    gap: 50px; /* Spacing between buttons */
 }
 
 .navbar li {
@@ -32,14 +33,14 @@ body, html {
 }
 
 .navbar a {
-    color: #FFD700; /* Gold */
+    color: #FFD700; /* Gold color */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #fff;
+    color: #fff; /* Changes to white on hover */
 }
 
 /* Slideshow container */
