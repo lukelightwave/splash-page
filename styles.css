@@ -125,13 +125,10 @@ body, html {
     font-size: 18px;
     font-weight: bold;
     z-index: 100;
-    padding: 10px; /* Keep padding for spacing */
-    background-color: transparent; /* Make sure the background is transparent */
-}
-
-
-.contact-info p {
-    margin: 5px 0;
+    padding: 10px;
+    background-color: transparent !important; /* Ensure no background */
+    border: none; /* Make sure there's no border */
+    box-shadow: none; /* Remove any potential box shadows */
 }
 
 /* Styling for the links (address and email) */
@@ -146,7 +143,5 @@ body, html {
 }
 
 .contact-info a:visited {
-    color: #FFD700 !important; /* Maintain yellow even after clicking (no purple visited color) */
+    color: #FFD700 !important; /* Maintain yellow even after clicking */
 }
-
-
