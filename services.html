@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Services - Lightwave Post</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Services Page</h1>
-    <p>Welcome to the servicess page. Add more content here!</p>
+    <!-- Navbar with buttons -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="artists.html">ARTISTS</a></li>
+            <li><a href="work.html">WORK</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slideshow container for cycling background images -->
+    <div class="slideshow">
+        <img src="services-images/services-image1.jpg" class="active" alt="Services Slide 1">
+        <img src="services-images/services-image2.jpg" alt="Services Slide 2">
+        <img src="services-images/services-image3.jpg" alt="Services Slide 3">
+        <img src="services-images/services-image4.jpg" alt="Services Slide 4">
+        <img src="services-images/services-image5.jpg" alt="Services Slide 5">
+    </div>
+
+    <!-- Buttons on the left -->
+    <div class="services-buttons">
+        <button class="services-btn" data-text="Dailies">DAILIES</button>
+        <button class="services-btn" data-text="Online">ONLINE</button>
+        <button class="services-btn" data-text="Color">COLOR</button>
+        <button class="services-btn" data-text="VFX">VFX</button>
+        <button class="services-btn" data-text="Finish">FINISH</button>
+    </div>
+
+    <!-- Text that appears when hovering over buttons -->
+    <div class="services-hover-text">
+        <p id="hover-text"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
