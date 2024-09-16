@@ -102,10 +102,10 @@ body, html {
 /* Work gallery styles */
 .work-gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns for posters */
-    gap: 10px; /* Space between posters */
-    padding: 20px;
-    margin-top: 100px; /* Offset below navbar */
+    grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
+    gap: 10px; /* Space between the movie posters */
+    padding: 20px; /* Padding around the gallery */
+    margin-top: 100px; /* Space below the navbar */
     justify-content: center;
     align-items: center;
     max-width: 1200px; /* Set a maximum width for the grid */
@@ -114,14 +114,13 @@ body, html {
 }
 
 .work-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px; /* Rounded corners */
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    border-radius: 5px; /* Optional: add rounded corners */
+    object-fit: cover; /* Ensures the images fit within their grid cells */
     transition: transform 0.3s ease;
-    object-fit: cover; /* Ensures the images fit properly */
 }
 
 .work-item img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
 }
-
