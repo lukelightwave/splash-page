@@ -34,60 +34,28 @@
     color: #FFD700 !important; /* Keep the links yellow even after visiting */
 }
 
-
-// Identify the page by its title
-const pageTitle = document.title;
-
-// Declare an empty array for the slideshow images
-let slideshowImages = [];
-
-// Check the page title to determine which images to load
-if (pageTitle.includes("Contact")) {
-    slideshowImages = [
-        "contact-image/contact-image1.jpg",
-        "contact-image/contact-image2.jpg",
-        "contact-image/contact-image3.jpg",
-        "contact-image/contact-image4.jpg",
-        "contact-image/contact-image5.jpg"
-    ];
-} else if (pageTitle.includes("Services")) {
-    slideshowImages = [
-        "services-hover-images/service-image1.jpg",
-        "services-hover-images/service-image2.jpg",
-        "services-hover-images/service-image3.jpg",
-        "services-hover-images/service-image4.jpg",
-        "services-hover-images/service-image5.jpg"
-    ];
-} else if (pageTitle.includes("Work")) {
-    slideshowImages = [
-        "workbg-images/background1.jpg",
-        "workbg-images/background2.jpg",
-        "workbg-images/background3.jpg"
-    ];
+/* Slideshow container for cycling background images */
+.slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
 }
 
-// Slideshow logic
-let currentImageIndex = 0;
-const slideshowElement = document.querySelector('.slideshow');
-
-function changeBackground() {
-    const activeImage = document.querySelector('.slideshow img.active');
-    if (activeImage) {
-        activeImage.classList.remove('active');
-    }
-
-    const img = document.createElement('img');
-    img.src = slideshowImages[currentImageIndex];
-    img.classList.add('active');
-    slideshowElement.appendChild(img);
-
-    currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-// Start the slideshow if there are images to cycle through
-if (slideshowImages.length > 0) {
-    changeBackground();
-    setInterval(changeBackground, 5000); // Change background every 5 seconds
+.slideshow img.active {
+    opacity: 1;
 }
 
 /* Services buttons */
@@ -137,4 +105,3 @@ if (slideshowImages.length > 0) {
 .show-hover-text {
     visibility: visible;
 }
-
