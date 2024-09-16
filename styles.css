@@ -149,17 +149,16 @@ body, html {
 /* Work gallery styles */
 .work-gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    padding: 50px;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 0px; /* Reduce the gap between images */
+    padding: 30px; /* Reduce padding around the grid */
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    max-width: 1400px; /* Limit the gallery width to a maximum value */
+    max-width: 1200px; /* Limit the gallery width to a smaller value */
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .work-item img {
     width: 100%;
@@ -172,4 +171,5 @@ body, html {
 .work-item img:hover {
     transform: scale(1.05); /* Slight zoom on hover */
 }
+
 
