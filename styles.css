@@ -1,3 +1,49 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100; /* Make sure the navbar is on top of everything */
+    background-color: transparent;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 50px;
+}
+
+.navbar li {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
 /* Slideshow container for cycling background images */
 .slideshow {
     position: fixed;
@@ -5,7 +51,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1;
+    z-index: -1; /* Make sure background is behind everything */
     overflow: hidden;
 }
 
@@ -21,3 +67,68 @@
 .slideshow img.active {
     opacity: 1;
 }
+
+/* General content styles (e.g., for sections like Work, Services, etc.) */
+.content-section {
+    position: relative;
+    z-index: 10; /* Ensure content is above the background */
+    padding: 50px;
+    color: white; /* Adjust this as necessary */
+    text-align: center;
+}
+
+/* Contact info section */
+.contact-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #FFD700;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 100;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Styling for the links (address and email) */
+.contact-info a {
+    color: #FFD700 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ffffff !important;
+}
+
+.contact-info a:visited {
+    color: #FFD700 !important;
+}
+
+/* Work gallery styles */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 100px;
+    z-index: 10; /* Ensure it's above the background */
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.work-item img:hover {
+    transform: scale(1.05);
+}
+
