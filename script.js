@@ -54,3 +54,39 @@ servicesButtons.forEach(button => {
     });
 });
 
+// Identify the page by its title
+const pageTitle = document.title;
+let slideshowImages = [];
+
+if (pageTitle.includes("Contact")) {
+    slideshowImages = [
+        "contact-image/contact-image1.jpg",
+        "contact-image/contact-image2.jpg",
+        "contact-image/contact-image3.jpg",
+        "contact-image/contact-image4.jpg",
+        "contact-image/contact-image5.jpg"
+    ];
+}
+
+// Slideshow logic
+let currentImageIndex = 0;
+const slideshowElement = document.querySelector('.slideshow');
+
+function changeBackground() {
+    const activeImage = document.querySelector('.slideshow img.active');
+    if (activeImage) {
+        activeImage.classList.remove('active');
+    }
+
+    const img = document.createElement('img');
+    img.src = slideshowImages[currentImageIndex];
+    img.classList.add('active');
+    slideshowElement.appendChild(img);
+
+    currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+}
+
+if (slideshowImages.length > 0) {
+    changeBackground();
+    setInterval(changeBackground, 5000); // Change background every 5 seconds
+}
