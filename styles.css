@@ -54,6 +54,55 @@
     opacity: 1;
 }
 
+/* Common styles for Navbar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    background-color: transparent;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 50px;
+}
+
+.navbar a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+/* Contact info */
+.contact-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #FFD700;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.contact-info a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: white;
+}
+
 /* Work gallery styles */
 .work-gallery {
     display: grid;
@@ -108,7 +157,7 @@
     color: #ffffff;
 }
 
-/* Hover text that appears in the center */
+/* Hover text */
 .services-hover-text {
     position: absolute;
     top: 50%;
@@ -122,10 +171,10 @@
     visibility: hidden;
 }
 
-/* CSS class to show hover text */
 .show-hover-text {
     visibility: visible;
 }
+
 
 /* Contact information at the bottom center */
 .contact-info {
