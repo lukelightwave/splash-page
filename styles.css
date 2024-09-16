@@ -127,3 +127,27 @@
     visibility: visible;
 }
 
+/* Contact information at the bottom center */
+.contact-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #FFD700;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 100;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.contact-info a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: white;
+}
+
