@@ -1,3 +1,40 @@
+/* Navbar styles */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100; /* Ensure navbar is on top of everything */
+    background-color: transparent;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 50px;
+}
+
+.navbar li {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    color: #FFD700; /* Yellow header text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+.navbar a:visited {
+    color: #FFD700 !important; /* Keep the links yellow even after visiting */
+}
+
+
 // Identify the page by its title
 const pageTitle = document.title;
 
