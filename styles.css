@@ -150,12 +150,12 @@ body, html {
 .work-gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    gap: 0px; /* Reduce the gap between images */
-    padding: 30px; /* Reduce padding around the grid */
+    gap: 10px; /* Increase gap slightly for better spacing */
+    padding: 20px; /* Reduce padding around the grid */
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    max-width: 1200px; /* Limit the gallery width to a smaller value */
+    max-width: 1000px; /* Further reduce the max width of the gallery */
     margin-left: auto;
     margin-right: auto;
 }
@@ -171,5 +171,6 @@ body, html {
 .work-item img:hover {
     transform: scale(1.05); /* Slight zoom on hover */
 }
+
 
 
