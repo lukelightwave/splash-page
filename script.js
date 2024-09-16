@@ -36,3 +36,21 @@ if (slideshowImages.length > 0) {
     changeBackground();
     setInterval(changeBackground, 5000); // Change background every 5 seconds
 }
+
+// Hover text functionality for Services buttons
+const servicesButtons = document.querySelectorAll('.services-btn');
+const hoverText = document.getElementById('hover-text');
+const hoverTextContainer = document.querySelector('.services-hover-text');
+
+servicesButtons.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        hoverText.textContent = this.dataset.description; // Set the description text
+        hoverTextContainer.classList.add('show-hover-text'); // Make the text visible
+    });
+
+    button.addEventListener('mouseout', function() {
+        hoverTextContainer.classList.remove('show-hover-text'); // Hide the text again
+        hoverText.textContent = ''; // Clear the text
+    });
+});
+
