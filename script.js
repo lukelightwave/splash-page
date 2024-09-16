@@ -59,7 +59,7 @@ setInterval(changeContactBackground, 5000); // Cycle every 5 seconds for Contact
 setInterval(cycleServicesImages, 5000); // This function is not defined in your snippet
 
 
-// JavaScript for cycling the background images from "workbg-images" folder (Work Page)
+// JavaScript for cycling the background images for the Work page
 const workSlideshowImages = [
     "workbg-images/background1.jpg",
     "workbg-images/background2.jpg",
@@ -84,6 +84,7 @@ function changeWorkBackground() {
 }
 changeWorkBackground();
 setInterval(changeWorkBackground, 5000); // Cycle every 5 seconds for Work Page
+
 
 
 // Hover text functionality for Services buttons
