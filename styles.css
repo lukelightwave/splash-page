@@ -206,3 +206,23 @@ body, html {
     color: white;
 }
 
+/* Hover text that appears in the center */
+.services-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 10;
+    visibility: hidden; /* Hidden by default */
+}
+
+/* Show hover text when active */
+.show-hover-text {
+    visibility: visible;
+}
+
+
