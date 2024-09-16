@@ -34,7 +34,7 @@ body, html {
 }
 
 .navbar a {
-    color: #FFD700;
+    color: #FFD700; /* Yellow color for header text */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -51,7 +51,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1; /* Make sure background is behind everything */
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -68,15 +68,6 @@ body, html {
     opacity: 1;
 }
 
-/* General content styles (e.g., for sections like Work, Services, etc.) */
-.content-section {
-    position: relative;
-    z-index: 10; /* Ensure content is above the background */
-    padding: 50px;
-    color: white; /* Adjust this as necessary */
-    text-align: center;
-}
-
 /* Contact info section */
 .contact-info {
     position: absolute;
@@ -84,7 +75,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: #FFD700;
+    color: #FFD700; /* Yellow text color for contact info */
     font-size: 18px;
     font-weight: bold;
     z-index: 100;
@@ -131,4 +122,3 @@ body, html {
 .work-item img:hover {
     transform: scale(1.05);
 }
-
