@@ -1,59 +1,13 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar styles */
-.navbar {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    text-align: center;
-    z-index: 100;
-    background-color: transparent;
-}
-
-.navbar ul {
-    list-style-type: none;
-    display: inline-flex;
-    gap: 50px;
-}
-
-.navbar li {
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
-.navbar a {
-    color: #FFD700;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #fff;
-}
-
 /* Slideshow container for cycling background images */
 .slideshow {
-    position: fixed; /* Ensure it's fixed at the top of the page */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1; /* Background behind all other elements */
+    z-index: -1; /* Make sure background is behind everything */
     overflow: hidden;
 }
-
 
 .slideshow img {
     position: absolute;
@@ -68,113 +22,4 @@ body, html {
     opacity: 1;
 }
 
-/* Services buttons */
-.services-buttons {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 10;
-}
-
-.services-btn {
-    background-color: transparent;
-    border: none;
-    color: #FFD700;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.services-btn:hover {
-    color: #fff; /* Turns button text white on hover */
-}
-
-/* Hover text that appears in the center */
-.services-hover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-    z-index: 10;
-    visibility: hidden; /* Initially hidden */
-}
-
-.services-hover-text p {
-    margin: 0;
-}
-
-/* CSS class to show hover text */
-.show-hover-text {
-    visibility: visible;
-}
-
-/* Contact information at the bottom center */
-.contact-info {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #FFD700;
-    font-size: 18px;
-    font-weight: bold;
-    z-index: 100;
-    padding: 10px;
-    background-color: transparent; /* Make sure the background is fully transparent */
-    border: none; /* Ensure there's no border */
-    box-shadow: none; /* Remove any shadows */
-}
-
-/* Styling for the links (address and email) */
-.contact-info a {
-    color: #FFD700 !important; /* Ensure yellow links by default */
-    text-decoration: none !important; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition on hover */
-}
-
-.contact-info a:hover {
-    color: #ffffff !important; /* Turns white on hover */
-}
-
-.contact-info a:visited {
-    color: #FFD700 !important; /* Maintain yellow even after clicking */
-}
-
-/* Work gallery styles */
-.work-gallery {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    gap: 10px; /* Increase gap slightly for better spacing */
-    padding: 20px; /* Reduce padding around the grid */
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.work-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    object-fit: cover; /* Ensures the images fit properly within their grid cells */
-    transition: transform 0.3s ease;
-}
-
-.work-item img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-
-
+/* Add additional styles for the gallery and other content as needed */
