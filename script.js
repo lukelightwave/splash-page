@@ -79,3 +79,37 @@ servicesButtons.forEach(button => {
     });
 });
 
+// JavaScript for cycling the background images from "workbg-images" folder
+const slideshowImages = [
+    "workbg-images/background1.jpg",
+    "workbg-images/background2.jpg",
+    "workbg-images/background3.jpg", // Add more images as needed
+];
+
+let currentImageIndex = 0;
+const slideshowElement = document.querySelector('.slideshow');
+
+function changeBackground() {
+    // Remove the current active image
+    const activeImage = document.querySelector('.slideshow img.active');
+    if (activeImage) {
+        activeImage.classList.remove('active');
+    }
+
+    // Create new image element
+    const img = document.createElement('img');
+    img.src = slideshowImages[currentImageIndex];
+    img.classList.add('active');
+    slideshowElement.appendChild(img);
+
+    // Cycle through the images
+    currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+}
+
+// Initially load the first background image
+changeBackground();
+
+// Change the background image every 5 seconds
+setInterval(changeBackground, 5000);
+
+
