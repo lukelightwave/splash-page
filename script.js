@@ -42,20 +42,41 @@ function cycleContactImages() {
     }
 }
 
-// Cycle every 5 seconds for Contact Page
-setInterval(cycleContactImages, 5000);
+// JavaScript for cycling the background images for the Contact page
+const contactSlideshowImages = [
+    "contact-image/contact-image1.jpg",
+    "contact-image/contact-image2.jpg",
+    "contact-image/contact-image3.jpg",
+    "contact-image/contact-image4.jpg",
+    "contact-image/contact-image5.jpg",
+];
 
-// Image slideshow for Services Page (background image cycling)
-const servicesImages = document.querySelectorAll('.slideshow img');
-let servicesCurrentIndex = 0;
+let contactCurrentImageIndex = 0;
+const contactSlideshowElement = document.querySelector('.slideshow');
 
-function cycleServicesImages() {
-    if (servicesImages.length > 0) {
-        servicesImages[servicesCurrentIndex].classList.remove('active');
-        servicesCurrentIndex = (servicesCurrentIndex + 1) % servicesImages.length;
-        servicesImages[servicesCurrentIndex].classList.add('active');
+function changeContactBackground() {
+    // Remove the current active image
+    const activeImage = document.querySelector('.slideshow img.active');
+    if (activeImage) {
+        activeImage.classList.remove('active');
     }
+
+    // Create new image element
+    const img = document.createElement('img');
+    img.src = contactSlideshowImages[contactCurrentImageIndex];
+    img.classList.add('active');
+    contactSlideshowElement.appendChild(img);
+
+    // Cycle through the images
+    contactCurrentImageIndex = (contactCurrentImageIndex + 1) % contactSlideshowImages.length;
 }
+
+// Initially load the first background image
+changeContactBackground();
+
+// Change the background image every 5 seconds
+setInterval(changeContactBackground, 5000);
+
 
 // Cycle every 5 seconds for the Services page
 setInterval(cycleServicesImages, 5000);
@@ -111,40 +132,3 @@ changeBackground();
 
 // Change the background image every 5 seconds
 setInterval(changeBackground, 5000);
-// JavaScript for cycling the background images for the Contact page
-const contactSlideshowImages = [
-    "contact-image/contact-image1.jpg",
-    "contact-image/contact-image2.jpg",
-    "contact-image/contact-image3.jpg",
-    "contact-image/contact-image4.jpg",
-    "contact-image/contact-image5.jpg",
-];
-
-let contactCurrentImageIndex = 0;
-const contactSlideshowElement = document.querySelector('.slideshow');
-
-function changeContactBackground() {
-    // Remove the current active image
-    const activeImage = document.querySelector('.slideshow img.active');
-    if (activeImage) {
-        activeImage.classList.remove('active');
-    }
-
-    // Create new image element
-    const img = document.createElement('img');
-    img.src = contactSlideshowImages[contactCurrentImageIndex];
-    img.classList.add('active');
-    contactSlideshowElement.appendChild(img);
-
-    // Cycle through the images
-    contactCurrentImageIndex = (contactCurrentImageIndex + 1) % contactSlideshowImages.length;
-}
-
-// Initially load the first background image
-changeContactBackground();
-
-// Change the background image every 5 seconds
-setInterval(changeContactBackground, 5000);
-
-
-
