@@ -9,9 +9,7 @@ function cycleSplashImages() {
         splashImages[splashCurrentIndex].classList.add('active');
     }
 }
-
-// Cycle every 5 seconds for Splash Page (if applicable)
-setInterval(cycleSplashImages, 5000);
+setInterval(cycleSplashImages, 5000); // Cycle every 5 seconds for Splash Page
 
 
 // Image slideshow for About Page (if applicable)
@@ -25,24 +23,10 @@ function cycleAboutImages() {
         aboutImages[aboutCurrentIndex].classList.add('active');
     }
 }
-
-// Cycle every 5 seconds for About Page (if applicable)
-setInterval(cycleAboutImages, 5000);
+setInterval(cycleAboutImages, 5000); // Cycle every 5 seconds for About Page
 
 
-// Image slideshow for Contact Page (append this code)
-const contactImages = document.querySelectorAll('.slideshow img');
-let contactCurrentIndex = 0;
-
-function cycleContactImages() {
-    if (contactImages.length > 0) {
-        contactImages[contactCurrentIndex].classList.remove('active');
-        contactCurrentIndex = (contactCurrentIndex + 1) % contactImages.length;
-        contactImages[contactCurrentIndex].classList.add('active');
-    }
-}
-
-// JavaScript for cycling the background images for the Contact page
+// Image slideshow for Contact Page - Only use the array-based logic
 const contactSlideshowImages = [
     "contact-image/contact-image1.jpg",
     "contact-image/contact-image2.jpg",
@@ -55,80 +39,66 @@ let contactCurrentImageIndex = 0;
 const contactSlideshowElement = document.querySelector('.slideshow');
 
 function changeContactBackground() {
-    // Remove the current active image
     const activeImage = document.querySelector('.slideshow img.active');
     if (activeImage) {
         activeImage.classList.remove('active');
     }
 
-    // Create new image element
     const img = document.createElement('img');
     img.src = contactSlideshowImages[contactCurrentImageIndex];
     img.classList.add('active');
     contactSlideshowElement.appendChild(img);
 
-    // Cycle through the images
     contactCurrentImageIndex = (contactCurrentImageIndex + 1) % contactSlideshowImages.length;
 }
-
-// Initially load the first background image
 changeContactBackground();
-
-// Change the background image every 5 seconds
-setInterval(changeContactBackground, 5000);
+setInterval(changeContactBackground, 5000); // Cycle every 5 seconds for Contact Page
 
 
-// Cycle every 5 seconds for the Services page
-setInterval(cycleServicesImages, 5000);
+// Cycle every 5 seconds for the Services page (Add actual code here if needed)
+setInterval(cycleServicesImages, 5000); // This function is not defined in your snippet
 
-// Hover text functionality for Services buttons
-const servicesButtons = document.querySelectorAll('.services-btn');
-const hoverText = document.getElementById('hover-text');
-const hoverTextContainer = document.querySelector('.services-hover-text'); // Get the container for hover text
 
-servicesButtons.forEach(button => {
-    // Mouseover event to show hover text
-    button.addEventListener('mouseover', function() {
-        hoverText.textContent = this.dataset.description; // Set the description text
-        hoverTextContainer.classList.add('show-hover-text'); // Make the text visible
-    });
-
-    // Mouseout event to clear hover text when mouse leaves
-    button.addEventListener('mouseout', function() {
-        hoverTextContainer.classList.remove('show-hover-text'); // Hide the text again
-        hoverText.textContent = ''; // Clear the text
-    });
-});
-
-// JavaScript for cycling the background images from "workbg-images" folder
-const slideshowImages = [
+// JavaScript for cycling the background images from "workbg-images" folder (Work Page)
+const workSlideshowImages = [
     "workbg-images/background1.jpg",
     "workbg-images/background2.jpg",
     "workbg-images/background3.jpg", // Add more images as needed
 ];
 
-let currentImageIndex = 0;
-const slideshowElement = document.querySelector('.slideshow');
+let workCurrentImageIndex = 0;
+const workSlideshowElement = document.querySelector('.slideshow');
 
-function changeBackground() {
-    // Remove the current active image
+function changeWorkBackground() {
     const activeImage = document.querySelector('.slideshow img.active');
     if (activeImage) {
         activeImage.classList.remove('active');
     }
 
-    // Create new image element
     const img = document.createElement('img');
-    img.src = slideshowImages[currentImageIndex];
+    img.src = workSlideshowImages[workCurrentImageIndex];
     img.classList.add('active');
-    slideshowElement.appendChild(img);
+    workSlideshowElement.appendChild(img);
 
-    // Cycle through the images
-    currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+    workCurrentImageIndex = (workCurrentImageIndex + 1) % workSlideshowImages.length;
 }
+changeWorkBackground();
+setInterval(changeWorkBackground, 5000); // Cycle every 5 seconds for Work Page
 
-// Initially load the first background image
-changeBackground();
 
-// Change the background image every 5 seconds
-setInterval(changeBackground, 5000);
+// Hover text functionality for Services buttons
+const servicesButtons = document.querySelectorAll('.services-btn');
+const hoverText = document.getElementById('hover-text');
+const hoverTextContainer = document.querySelector('.services-hover-text');
+
+servicesButtons.forEach(button => {
+    button.addEventListener('mouseover', function() {
+        hoverText.textContent = this.dataset.description;
+        hoverTextContainer.classList.add('show-hover-text');
+    });
+
+    button.addEventListener('mouseout', function() {
+        hoverTextContainer.classList.remove('show-hover-text');
+        hoverText.textContent = '';
+    });
+});
