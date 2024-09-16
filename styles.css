@@ -1,3 +1,9 @@
+/* Apply Arial Bold globally */
+body, html {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
 /* Navbar styles */
 .navbar {
     position: absolute;
