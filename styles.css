@@ -52,3 +52,53 @@ if (slideshowImages.length > 0) {
     changeBackground();
     setInterval(changeBackground, 5000); // Change background every 5 seconds
 }
+
+    /* Services buttons */
+.services-buttons {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.services-btn {
+    background-color: transparent;
+    border: none;
+    color: #FFD700; /* Yellow button text */
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.services-btn:hover {
+    color: #fff; /* Turns button text white on hover */
+}
+
+/* Hover text that appears in the center */
+.services-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 10;
+    visibility: hidden; /* Initially hidden */
+}
+
+.services-hover-text p {
+    margin: 0;
+}
+
+/* CSS class to show hover text */
+.show-hover-text {
+    visibility: visible;
+}
+
