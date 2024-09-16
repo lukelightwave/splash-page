@@ -149,7 +149,7 @@ body, html {
 /* Work gallery styles */
 .work-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
     gap: 20px;
     padding: 50px;
     justify-content: center;
@@ -161,9 +161,11 @@ body, html {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    object-fit: cover; /* Ensures the images fit properly within their grid cells */
     transition: transform 0.3s ease;
 }
 
 .work-item img:hover {
     transform: scale(1.05); /* Slight zoom on hover */
 }
+
