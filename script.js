@@ -6,7 +6,6 @@ let slideshowImages = [];
 
 // Check the page title to determine which images to load
 if (pageTitle.includes("Contact")) {
-    // Images for Contact Page
     slideshowImages = [
         "contact-image/contact-image1.jpg",
         "contact-image/contact-image2.jpg",
@@ -15,7 +14,6 @@ if (pageTitle.includes("Contact")) {
         "contact-image/contact-image5.jpg"
     ];
 } else if (pageTitle.includes("Services")) {
-    // Images for Services Page
     slideshowImages = [
         "services-hover-images/service-image1.jpg",
         "services-hover-images/service-image2.jpg",
@@ -24,7 +22,6 @@ if (pageTitle.includes("Contact")) {
         "services-hover-images/service-image5.jpg"
     ];
 } else if (pageTitle.includes("Work")) {
-    // Images for Work Page
     slideshowImages = [
         "workbg-images/background1.jpg",
         "workbg-images/background2.jpg",
@@ -55,7 +52,8 @@ if (slideshowImages.length > 0) {
     changeBackground();
     setInterval(changeBackground, 5000); // Change background every 5 seconds
 }
-// Hover text functionality for Services buttons
+
+/* Hover text functionality for Services buttons */
 const servicesButtons = document.querySelectorAll('.services-btn');
 const hoverText = document.getElementById('hover-text');
 const hoverTextContainer = document.querySelector('.services-hover-text');
@@ -73,6 +71,3 @@ servicesButtons.forEach(button => {
         hoverText.textContent = ''; // Clear the text
     });
 });
-
-
-
