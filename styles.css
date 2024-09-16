@@ -98,3 +98,30 @@ body, html {
 .contact-info a:visited {
     color: #FFD700; /* Keep yellow after clicking */
 }
+
+/* Work gallery styles */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for posters */
+    gap: 10px; /* Space between posters */
+    padding: 20px;
+    margin-top: 100px; /* Offset below navbar */
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px; /* Set a maximum width for the grid */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensures the images fit properly */
+}
+
+.work-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
