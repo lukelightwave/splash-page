@@ -45,12 +45,15 @@ body, html {
 
 /* Slideshow container for cycling background images */
 .slideshow {
-    position: absolute;
+    position: fixed; /* Ensure it's fixed at the top of the page */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 0;
+    z-index: -1; /* Background behind all other elements */
     overflow: hidden;
 }
+
 
 .slideshow img {
     position: absolute;
