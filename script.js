@@ -27,6 +27,12 @@ if (pageTitle.includes("Work")) {
         "contact-image/contact-image4.jpg",
         "contact-image/contact-image5.jpg"
     ];
+} else if (pageTitle.includes("Splash")) {  // Add Splash Page check here
+    slideshowImages = [
+        "splash-images/image1.jpg",  // Replace with actual image paths for the splash page
+        "splash-images/image2.jpg",
+        "splash-images/image3.jpg"
+    ];
 }
 
 // Slideshow logic
@@ -69,4 +75,3 @@ servicesButtons.forEach(button => {
         hoverText.textContent = ''; // Clear the text
     });
 });
-
