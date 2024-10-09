@@ -32,9 +32,9 @@ if (pageTitle.includes("Work")) {
     console.log("Contact page detected, cycling contact-image");
 } else if (pageTitle.includes("Splash")) {  // Ensure splash page is detected
     slideshowImages = [
-        "splash-images/image1.jpg",  // Replace with actual image paths
-        "splash-images/image2.jpg",
-        "splash-images/image3.jpg"
+        "images/image4.jpg",  // Replace with actual image paths
+        "images/image2.jpg",
+        "images/image3.jpg"
     ];
     console.log("Splash page detected, cycling splash-images");
 }
