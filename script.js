@@ -29,9 +29,9 @@ if (pageTitle.includes("Work")) {
     ];
 } else if (pageTitle.includes("Splash")) {  // Add Splash Page check here
     slideshowImages = [
-        "splash-images/image1.jpg",  // Replace with actual image paths for the splash page
-        "splash-images/image2.jpg",
-        "splash-images/image3.jpg"
+        "images/image1.jpg",  // Replace with actual image paths for the splash page
+        "images/image2.jpg",
+        "images/image3.jpg"
     ];
 }
 
