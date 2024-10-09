@@ -11,6 +11,7 @@ if (pageTitle.includes("Work")) {
         "workbg-images/background2.jpg",
         "workbg-images/background3.jpg"
     ];
+    console.log("Work page detected, cycling workbg-images");
 } else if (pageTitle.includes("Services")) {
     slideshowImages = [
         "services-hover-images/service-image1.jpg",
@@ -19,6 +20,7 @@ if (pageTitle.includes("Work")) {
         "services-hover-images/service-image4.jpg",
         "services-hover-images/service-image5.jpg"
     ];
+    console.log("Services page detected, cycling services-hover-images");
 } else if (pageTitle.includes("Contact")) {
     slideshowImages = [
         "contact-image/contact-image1.jpg",
@@ -27,12 +29,14 @@ if (pageTitle.includes("Work")) {
         "contact-image/contact-image4.jpg",
         "contact-image/contact-image5.jpg"
     ];
-} else if (pageTitle.includes("Splash")) {  // Add Splash Page check here
+    console.log("Contact page detected, cycling contact-image");
+} else if (pageTitle.includes("Splash")) {  // Ensure splash page is detected
     slideshowImages = [
-        "images/image1.jpg",  // Replace with actual image paths for the splash page
-        "images/image2.jpg",
-        "images/image3.jpg"
+        "splash-images/image1.jpg",  // Replace with actual image paths
+        "splash-images/image2.jpg",
+        "splash-images/image3.jpg"
     ];
+    console.log("Splash page detected, cycling splash-images");
 }
 
 // Slideshow logic
@@ -50,6 +54,8 @@ function changeBackground() {
     img.classList.add('active');
     slideshowElement.appendChild(img);
 
+    console.log("Displaying image: ", img.src);  // Debugging line
+
     currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
 }
 
@@ -57,6 +63,8 @@ function changeBackground() {
 if (slideshowImages.length > 0) {
     changeBackground();
     setInterval(changeBackground, 5000); // Change background every 5 seconds
+} else {
+    console.log("No images found for slideshow");
 }
 
 // Hover text functionality for Services buttons
